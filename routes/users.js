@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
   console.dir(req.connection.remoteAddress);
   console.dir(req.headers['x-forwarded-for'] || req.connection.remoteAddress);
   console.dir(req.socket._peername);
-  res.send('Your External IP :' + req.socket._peername.address + " : " + req.socket._peername.port + " :: " +req.socket._peername.family);
+  res.send('Peer DATA= IP:' + req.socket._peername.address + "/ PORT: " + req.socket._peername.port + " / FAM:" +req.socket._peername.family);
 });
 
 module.exports = router;
