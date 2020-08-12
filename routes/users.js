@@ -17,6 +17,8 @@ router.post('/', function(req, res, next) {
   console.log("POST");
   console.dir(req.body);
 
+  res.send('OK');
+
 
 });
 
