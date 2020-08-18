@@ -18,7 +18,7 @@ router.get('/:num', function(req, res, next) {
 
 router.post('/:num', function(req, res) {
   var imgSrc = './public/stream/'+"img"+req.params.num+".jpg"
-  var imagedata = '
+  var imagedata = ''
   req.setEncoding('binary')
   var tt = 0
   
