@@ -31,7 +31,7 @@ router.post('/:num', function(req, res) {
   req.on('end', function(){
     fs.writeFile('./public/stream/'+imgTmpSrc, imagedata, 'binary', function(err){
       if (err) throw err
-      fs.rename(imgTmpSrc, imgSrc, function(err) {
+      fs.rename('./public/stream/'+imgTmpSrc, './public/stream/'+imgSrc, function(err) {
         if (err) throw err
         // console.log('File saved.')
       })
