@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
+const { tmpdir } = require('os');
 
 /* GET users listing. */
 router.get('/:num', function(req, res, next) {
@@ -12,10 +13,11 @@ router.get('/:num', function(req, res, next) {
   // console.dir(req);
   // res.send('Peer DATA=/IP:' + req.socket._peername.address + "/PORT:" + req.socket._peername.port + "/FAM:" +req.socket._peername.family);
   
-  res.send('<img src="/stream/'+imgSrc+'"><SCRIPT language="JavaScript">setTimeout("history.go(0);", 1);</SCRIPT>');
+  res.send('<img src="/stream/'+imgSrc+'"><SCRIPT language="JavaScript">setTimeout("history.go(0);", 40);</SCRIPT>');
 });
 
 router.post('/:num', function(req, res) {
+  var imgTmpSrc = "img"+req.params.num+"-tmp.jpg"
   var imgSrc = "img"+req.params.num+".jpg"
   var imagedata = ''
   req.setEncoding('binary')
@@ -27,9 +29,12 @@ router.post('/:num', function(req, res) {
   });
 
   req.on('end', function(){
-    fs.writeFile('./public/stream/'+imgSrc, imagedata, 'binary', function(err){
+    fs.writeFile('./public/stream/'+imgTmpSrc, imagedata, 'binary', function(err){
       if (err) throw err
         // console.log('File saved.')
+    })
+    fs.rename(imgTmpSrc, imgSrc, function(err) {
+      if (err) throw err
     })
   });
   res.send("{'result':'ok'}");
