@@ -14,7 +14,7 @@ router.get('/:num', function(req, res, next) {
   // console.dir(req);
   // res.send('Peer DATA=/IP:' + req.socket._peername.address + "/PORT:" + req.socket._peername.port + "/FAM:" +req.socket._peername.family);
   if(incomming == true) res.send('<img src="/stream/'+imgSrc+'"><SCRIPT language="JavaScript">setTimeout("history.go(0);", 40);</SCRIPT>');
-  else res.send('<h1>Loading...</h1>')
+  else res.send('<h1>Loading...</h1><SCRIPT language="JavaScript">setTimeout("history.go(0);", 40);</SCRIPT>')
   
 });
 
