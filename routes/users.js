@@ -13,8 +13,8 @@ router.get('/:num', function(req, res, next) {
   // console.dir(req.socket._peername);
   // console.dir(req);
   // res.send('Peer DATA=/IP:' + req.socket._peername.address + "/PORT:" + req.socket._peername.port + "/FAM:" +req.socket._peername.family);
-  if(incomming == true) res.send('<h3>.</h3><img src="/stream/'+imgSrc+'"><SCRIPT language="JavaScript">setTimeout("history.go(0);", 40);</SCRIPT>');
-  else res.send('<h3>Loading...</h3><img src="/stream/'+imgSrc+'"><SCRIPT language="JavaScript">setTimeout("history.go(0);", 40);</SCRIPT>');
+  if(incomming == true) res.send('<img src="/stream/'+imgSrc+'"><SCRIPT language="JavaScript">setTimeout("history.go(0);", 40);</SCRIPT>');
+  else res.send('<img src="/stream/'+imgSrc+'"><SCRIPT language="JavaScript">setTimeout("history.go(0);", 40);</SCRIPT>');
   
 });
 
