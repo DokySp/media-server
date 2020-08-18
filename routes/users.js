@@ -19,7 +19,6 @@ router.get('/:num', function(req, res, next) {
 });
 
 router.post('/:num', function(req, res) {
-  var imgTmpSrc = './public/stream/'+"img"+req.params.num+"-tmp.jpg"
   var imgSrc = './public/stream/'+"img"+req.params.num+".jpg"
   var imagedata = ''
   req.setEncoding('binary')
@@ -32,7 +31,7 @@ router.post('/:num', function(req, res) {
   });
 
   req.on('end', function(){
-    fs.writeFile(imgTmpSrc, imagedata, 'binary', function(err){
+    fs.writeFile(imgSrc, imagedata, 'binary', function(err){
       if (err) throw err
       // console.log('File saved.')
       incomming = false;
