@@ -12,7 +12,11 @@ router.get('/:num', function(req, res, next) {
   // console.dir(req.socket._peername);
   // console.dir(req);
   // res.send('Peer DATA=/IP:' + req.socket._peername.address + "/PORT:" + req.socket._peername.port + "/FAM:" +req.socket._peername.family);
+<<<<<<< HEAD
   res.send('<img height="100%" src="/stream/'+imgSrc+'">');
+=======
+  res.send('<img height="100%" src="/stream/'+imgSrc+'"><SCRIPT language="JavaScript">setTimeout("history.go(0);", 100);</SCRIPT>');
+>>>>>>> 7033002040f05724ca724d6ed78d1d53e4dcef53
 
 });
 
