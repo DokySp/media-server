@@ -12,7 +12,7 @@ router.get('/:num', function(req, res, next) {
   // console.dir(req.socket._peername);
   // console.dir(req);
   // res.send('Peer DATA=/IP:' + req.socket._peername.address + "/PORT:" + req.socket._peername.port + "/FAM:" +req.socket._peername.family);
-  res.send('<img id="viewer" height="100%" src="/stream/'+imgSrc+'">');
+  res.send('<script>window.onload = function(){imgReload();};function imgReload(){var v = new Date();document.getElementById("viewer").src = "'+imgSrc+'?time=" + v.getHours()+":"+v.getMinutes()+":"+v.getSeconds()+"."+v.getMilliseconds();setTimeout(imgReload, 100);}</script><img id="viewer" height="100%" src="/stream/'+imgSrc+'">');
 
 });
 

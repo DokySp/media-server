@@ -1,14 +1,18 @@
 <script>
     window.onload = function(){
         imgReload();
-    }
+    };
 
     function imgReload(){
-        var aa = document.getElementById("viewer")
-        aa.src = ""
-        setTimeout(imgReload, 10);
+        var v = new Date();
+        document.getElementById("viewer").src = "/stream/img01.jpg?time=" + v.getHours()+":"+v.getMinutes()+":"+v.getSeconds()+"."+v.getMilliseconds();
+        setTimeout(imgReload, 100);
     }
 </script>
 
 <img id="viewer" height="100%" src="/stream/'++'">
 
+
+
+
+<script>window.onload = function(){imgReload();};function imgReload(){var v = new Date();document.getElementById("viewer").src = "/stream/img01.jpg?time=" + v.getHours()+":"+v.getMinutes()+":"+v.getSeconds()+"."+v.getMilliseconds();setTimeout(imgReload, 100);}</script><img id="viewer" height="100%" src="/stream/'++'">
